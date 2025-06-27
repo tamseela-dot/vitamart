@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VitaMart - Grocery Store</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🛒 VitaMart</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fresh Groceries at Your Doorstep</h1>
+      <p>Organic | Quick Delivery | Affordable</p>
+      <a href="products.html">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Sale -->
+  <section class="section sale">
+    <h2>🔥 Today's Sale</h2>
+    <p><span class="badge">Flat 50% Off</span> <span class="badge">Up to 70% Off</span> <span class="badge">Buy 1 Get 1 Free</span></p>
+  </section>
+
+  <!-- Products Preview -->
+  <section class="section">
+    <h2>🛍 Popular Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="istockphoto-494712779-612x612.jpg" alt="Rice">
+        <div class="product-info">
+          <h4>Premium Rice</h4>
+          <p>Rs. 220</p>
+          <button onclick="addToCart('Premium Rice', 220)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="istockphoto-1351480492-612x612.jpg" alt="Fruits">
+        <div class="product-info">
+          <h4>Fresh Fruits</h4>
+          <p>Rs. 150</p>
+          <button onclick="addToCart('Fresh Fruits', 150)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="istockphoto-1195773741-612x612(0).jpg" alt="Vegetables">
+        <div class="product-info">
+          <h4>Green Vegetables</h4>
+          <p>Rs. 120</p>
+          <button onclick="addToCart('Green Vegetables', 120)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="products.html" class="btn">View All Products</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+    <p>Follow us on</p>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <p>&copy; 2025 VitaMart. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

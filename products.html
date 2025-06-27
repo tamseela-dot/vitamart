@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - VitaMart</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🛒 VitaMart</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2>Our Products</h2>
+    
+    <div class="category-filter">
+      <button class="filter-btn active" data-category="all">All Products</button>
+      <button class="filter-btn" data-category="fruits">Fruits</button>
+      <button class="filter-btn" data-category="vegetables">Vegetables</button>
+      <button class="filter-btn" data-category="grains">Grains</button>
+    </div>
+    
+    <div class="products">
+      <!-- Product items will be loaded here -->
+      <div class="product" data-category="fruits">
+        <img src="istockphoto-1536094874-612x612.jpg" alt="Apples">
+        <div class="product-info">
+          <h4>Fresh Apples</h4>
+          <p>Rs. 180/kg</p>
+          <button onclick="addToCart('Fresh Apples', 180)">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product" data-category="vegetables">
+        <img src="https://media.istockphoto.com/id/140453734/photo/fresh-tomatoes.jpg?s=612x612&w=0&k=20&c=b6XySPuRKF6opBf0bexh9AhkWck-c7TaoJvRdVNBgT0=" alt="Tomatoes">
+        <div class="product-info">
+          <h4>Organic Tomatoes</h4>
+          <p>Rs. 120/kg</p>
+          <button onclick="addToCart('Organic Tomatoes', 120)">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="product" data-category="grains">
+        <img src="istockphoto-494712779-612x612.jpg" alt="Rice">
+        <div class="product-info">
+          <h4>Premium Rice</h4>
+          <p>Rs. 220/kg</p>
+          <button onclick="addToCart('Premium Rice', 220)">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- More products can be added here -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+    <p>Follow us on</p>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <p>&copy; 2025 VitaMart. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter products by category
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        button.classList.add('active');
+        
+        // Filter products
+        document.querySelectorAll('.product').forEach(product => {
+          if (category === 'all' || product.dataset.category === category) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
